@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg-dark: #120816;
+  --bg-purple: #25102f;
+  --bg-purple-light: #421c4a;
+  --bg-burgundy: #5a1e40;
+
+  --red: #e62429;
+  --red-light: #ff3b43;
+
+  --white: #ffffff;
+  --text-light: #ddd4df;
+  --text-muted: #a99cac;
+
+  --border: rgba(255, 255, 255, 0.12);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-width: 320px;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(112, 37, 105, 0.28),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 40%,
+      rgba(190, 38, 65, 0.2),
+      transparent 30%
+    ),
+    var(--bg-dark);
+
+  color: var(--white);
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  opacity: 0.16;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+      transparent 1px
+    );
+
+  background-size: 5px 5px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 90%
+  );
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: var(--red);
+  color: white;
+}

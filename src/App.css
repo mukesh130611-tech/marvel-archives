@@ -1,0 +1,178 @@
+/* =========================================
+   GLOBAL APP
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34, 11, 43, 0.9),
+      rgba(86, 25, 55, 0.55)
+    );
+}
+
+
+/* =========================================
+   SHARED SECTION
+========================================= */
+
+.section {
+  position: relative;
+
+  width: 100%;
+
+  padding: 100px 6%;
+}
+
+.section-inner {
+  width: min(1200px, 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-label {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--red);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-family: "Bebas Neue", sans-serif;
+
+  font-size: clamp(42px, 5vw, 70px);
+
+  line-height: 0.95;
+
+  letter-spacing: 1px;
+}
+
+.section-description {
+  max-width: 500px;
+
+  margin-top: 18px;
+
+  color: var(--text-light);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   RED BUTTON
+========================================= */
+
+.red-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding: 13px 22px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background: var(--red);
+
+  color: white;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+
+  text-transform: uppercase;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.red-button:hover {
+  transform: translateY(-3px);
+
+  background: var(--red-light);
+
+  box-shadow:
+    0 12px 30px rgba(230, 36, 41, 0.3);
+}
+
+
+/* =========================================
+   GLASS CARD
+========================================= */
+
+.glass-card {
+  border: 1px solid var(--border);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.12),
+      rgba(255, 255, 255, 0.035)
+    );
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   DECORATIVE RED LINE
+========================================= */
+
+.red-line {
+  width: 45px;
+
+  height: 3px;
+
+  margin: 15px 0;
+
+  background: var(--red);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 75px 5%;
+  }
+
+  .section-description {
+    font-size: 13px;
+  }
+}

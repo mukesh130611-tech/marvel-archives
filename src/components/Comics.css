@@ -1,0 +1,504 @@
+.comics-section {
+  position: relative;
+  padding: 110px 6%;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(120, 35, 100, 0.28),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #241029,
+      #32132f 55%,
+      #431936
+    );
+}
+
+.comics-inner {
+  position: relative;
+  width: min(1300px, 100%);
+  margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.comics-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 40px;
+  margin-bottom: 38px;
+}
+
+.comics-title {
+  margin-top: 8px;
+
+  font-family:
+    "Bebas Neue",
+    sans-serif;
+
+  font-size:
+    clamp(55px, 6vw, 82px);
+
+  line-height: 0.82;
+  letter-spacing: 1px;
+}
+
+.comics-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.comics-header-right p {
+  max-width: 430px;
+
+  color: #c8b8ca;
+
+  font-size: 12px;
+  line-height: 1.8;
+
+  text-align: right;
+}
+
+
+/* =========================
+   EXPLORE BUTTON
+========================= */
+
+.comics-explore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.comics-explore:hover {
+  color: #ff4148;
+  transform: translateX(4px);
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.comics-slider {
+  width: 100%;
+}
+
+.comics-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.comic-card {
+  position: relative;
+
+  min-width: 0;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.comic-card:hover {
+  transform: translateY(-8px);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.comic-image-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 390px;
+
+  overflow: hidden;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 8px;
+
+  background: #160b1d;
+
+  box-shadow:
+    0 25px 40px
+    rgba(0, 0, 0, 0.25);
+}
+
+.comic-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  transition:
+    transform 0.6s ease;
+}
+
+.comic-card:hover .comic-image {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   IMAGE OVERLAY
+========================= */
+
+.comic-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.08),
+      rgba(0, 0, 0, 0.03) 45%,
+      rgba(0, 0, 0, 0.7)
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CATEGORY
+========================= */
+
+.comic-category {
+  position: absolute;
+
+  top: 14px;
+  left: 14px;
+
+  z-index: 3;
+
+  color:
+    rgba(255, 255, 255, 0.85);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   ISSUE NUMBER
+========================= */
+
+.comic-issue {
+  position: absolute;
+
+  top: 14px;
+  right: 14px;
+
+  z-index: 3;
+
+  padding: 5px 7px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 3px;
+
+  background:
+    rgba(0, 0, 0, 0.35);
+
+  color: rgba(255, 255, 255, 0.85);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================
+   OPEN BUTTON
+========================= */
+
+.comic-open {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+
+  z-index: 4;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0, 0, 0, 0.35);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.comic-open:hover {
+  background: #e62429;
+
+  border-color: #e62429;
+
+  transform:
+    rotate(45deg)
+    scale(1.05);
+}
+
+
+/* =========================
+   COMIC INFO
+========================= */
+
+.comic-info {
+  padding:
+    15px 3px 0;
+}
+
+.comic-info h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-family:
+    "Bebas Neue",
+    sans-serif;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  letter-spacing: 0.8px;
+}
+
+.comic-info span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #907b94;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+/* =========================
+   BOTTOM PROGRESS
+========================= */
+
+.comics-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 35px;
+
+  color: #7d687f;
+
+  font-size: 7px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.comics-progress {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+}
+
+.comics-progress span {
+  display: block;
+
+  width: 25%;
+  height: 100%;
+
+  background: #e62429;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+  .comics-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 14px;
+  }
+
+  .comics-header {
+    align-items: flex-start;
+  }
+
+  .comics-header-right {
+    align-items: flex-end;
+  }
+
+  .comics-header-right p {
+    max-width: 360px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .comics-section {
+    padding: 80px 5%;
+  }
+
+  .comics-header {
+    display: block;
+
+    margin-bottom: 28px;
+  }
+
+  .comics-header-right {
+    display: block;
+
+    margin-top: 25px;
+  }
+
+  .comics-header-right p {
+    max-width: 100%;
+
+    text-align: left;
+  }
+
+  .comics-explore {
+    margin-top: 18px;
+  }
+
+  .comics-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 9px;
+  }
+
+  .comic-image-wrapper {
+    height: 280px;
+  }
+
+  .comic-category {
+    top: 10px;
+    left: 10px;
+
+    font-size: 6px;
+  }
+
+  .comic-issue {
+    top: 10px;
+    right: 10px;
+
+    font-size: 6px;
+  }
+
+  .comic-open {
+    right: 10px;
+    bottom: 10px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+  .comic-info {
+    padding-top: 10px;
+  }
+
+  .comic-info h3 {
+    font-size: 15px;
+  }
+
+  .comic-info span {
+    font-size: 6px;
+  }
+
+  .comics-bottom {
+    display: none;
+  }
+}

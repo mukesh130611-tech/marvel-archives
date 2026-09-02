@@ -1,0 +1,209 @@
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 68px;
+
+  padding: 0 4%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 1000;
+
+  background: rgba(12, 7, 15, 0.88);
+
+  backdrop-filter: blur(14px);
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.marvel-logo {
+  padding: 5px 9px;
+
+  background: #e62429;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 900;
+
+  letter-spacing: -1px;
+
+  transform: skew(-6deg);
+
+  line-height: 1;
+}
+
+
+.archive-text {
+  color: #aaa;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+.navbar-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+}
+
+
+.navbar-links a {
+  position: relative;
+
+  color: #aaa;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  transition: color 0.3s ease;
+}
+
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: white;
+}
+
+
+.navbar-links a.active::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -11px;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: #e62429;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.navbar-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.nav-icon,
+.mobile-menu {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.04);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+
+.nav-icon:hover,
+.mobile-menu:hover {
+  background: #e62429;
+
+  border-color: #e62429;
+}
+
+
+.mobile-menu {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+  .navbar-links {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .navbar {
+    padding: 0 18px;
+  }
+
+  .archive-text {
+    display: none;
+  }
+
+  .nav-icon {
+    display: none;
+  }
+
+}
